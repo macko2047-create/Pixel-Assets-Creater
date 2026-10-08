@@ -1,15 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#17191f"><title>Pixel Assets Creator</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header><strong>Pixel Assets Creator</strong><select id="size"><option>16</option><option selected>32</option><option>64</option></select><span class="spacer"></span><button id="undo">↶</button><button id="redo">↷</button><button id="export">Export PNG</button></header>
-<main>
-<nav class="tools"><button data-tool="pencil" class="active">✎<small>Pencil</small></button><button data-tool="eraser">◇<small>Eraser</small></button><button data-tool="fill">▣<small>Fill</small></button><button data-tool="pick">⌾<small>Pick</small></button><button id="mirror">⇆<small>Mirror X</small></button></nav>
-<section class="stage"><div id="canvasWrap"><canvas id="canvas" width="32" height="32"></canvas></div><div class="status"><span id="zoomLabel">Zoom 1000%</span><span id="coord">—</span></div></section>
-<aside><h3>Palette</h3><div id="palette"></div><label>Colour <input id="color" type="color" value="#111827"></label><h3>Preview</h3><canvas id="preview" width="32" height="32"></canvas><p>Wheel: zoom</p></aside>
-</main>
-<script src="app.js"></script>
-</body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#17191f"><title>Pixel Assets Creator</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"></head>
+<body><header><strong>Pixel Assets Creator</strong><div class="modes"><button id="pixelMode" class="active">PIXEL</button><button id="dollMode">DOLL</button></div><select id="size"><option>16</option><option selected>32</option><option>64</option></select><span class="spacer"></span><button id="undo">↶</button><button id="redo">↷</button><button id="resetDoll" hidden>Reset Pose</button><button id="export">Export PNG</button></header>
+<main><nav class="tools"><button data-tool="pencil" class="active">✎<small>Pencil</small></button><button data-tool="eraser">◇<small>Eraser</small></button><button data-tool="fill">▣<small>Fill</small></button><button data-tool="pick">⌾<small>Pick</small></button><button id="mirror">⇆<small>Mirror X</small></button></nav>
+<section class="stage"><div id="canvasWrap"><canvas id="canvas" width="32" height="32"></canvas><canvas id="dollCanvas" hidden></canvas></div><div class="status"><span id="zoomLabel">Zoom 1000%</span><span id="coord">—</span></div></section>
+<aside><div id="pixelPanel"><h3>Palette</h3><div id="palette"></div><label>Colour <input id="color" type="color" value="#111827"></label><h3>Preview</h3><canvas id="preview" width="32" height="32"></canvas></div><div id="dollPanel" hidden><h3>Action Doll · v0.1</h3><p>Drag the gold joints to pose the doll. No IK or physics: you are in full control.</p><div class="jointLegend">● Shoulder<br>● Elbow<br>● Hand<br>● Hip<br>● Knee<br>● Foot</div><p><b>Prototype goal</b><br>Test direct posing on phone/tablet/PC before building bitmap body parts and 8-direction views.</p></div></aside></main><script src="app.js"></script><script src="doll.js"></script></body></html>
